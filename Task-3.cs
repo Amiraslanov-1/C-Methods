@@ -6,18 +6,20 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine(Add());
+            int num=35;
+            Add(ref num);
+            Console.WriteLine(num);
 
         }
-        static int Add(int num=35)
+        static int Add(int num)
         {
             int i=0;
             while (i*i<num)
             {
                 i++;
             }
-            return i-1;
+            num=i-1;
+            return num;
 
         }
     }
