@@ -1,66 +1,48 @@
-﻿
-using System;
-using System.Reflection;
+﻿using System;
 
-namespace Student
+namespace ConsoleApp29
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Student student1 = new Student("Akif", "Hesenli", 70);
-            Student student2 = new Student("Allahverdi", "Ehmedov", 55);
-            Group group = new Group();
-            group.StudentLimit = 5;
-            group.AddStudent(student1);
-            group.AddStudent(student2);
 
+            Hotel hotels = new Hotel("Salam");
+            Hotel hotels1 = new Hotel("Salam");
+            Hotel hotels2 = new Hotel("Salam");
 
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            var groupType = typeof(Group);
-
-
-            foreach (var type in assembly.GetTypes())
+            Room room = new Room()
             {
-                if (type == groupType)
-                {
-                    int sum = 0;
-                    foreach (var item in type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance))
-                    {
-                        
-                        if (typeof(Student[]) == item.GetValue(group).GetType())
-                        {
-                            Student[] students = (Student[])item.GetValue(group);
-                            foreach (var stu in students)
-                            {
-                                sum += stu.Point;
-                            }
+                Name = "Salam",
+                Price = 5,
+                PersonCapacity = 3
+            };
+            hotels.AddRoom(room);
 
-                        }
-                        //if(item.GetValue(group) == )
-                        //{
-                        //    Console.WriteLine("ok");
-                        //}
-                        //Student[] students = item.GetValue(group) as Student[];
-                        //Console.WriteLine(item.GetValue(group));
-                        //if (item.GetValue(group) is Student[])
-                        //{
-                        //    students = (Student[])item.GetValue(group);
-                        //}
-                        //foreach (var stu in students)
-                        //{
-                        //    Console.WriteLine(stu);
-                        //}
-                    }
-
-                Console.WriteLine(sum);
-                }
+            try
+            {
+                hotels.MakeResevation(1);
             }
+            catch (NotAvaibleException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            Console.WriteLine(hotels[0].IsAvailable);
+
+
+
 
         }
 
 
 
 
+
+
     }
+
+
+
+  
 }
