@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.dragover {
+    width: 49%;
+    padding: 1rem;
+    background-color: #DDD;
+    border-radius: .5rem;
+}
+
+.device {
+    padding: 1rem;
+    background-color: #FFF;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.device span {
+    display: flex;
+    align-items: center;
+}
+
+.device span i {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-devices {
+    padding: 1rem;
+    background-color: #DDD;
+    border-radius: .5rem;
+    margin: 2rem 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.dragover h2 {
+    margin-bottom: 1rem ;
+}
+
+.add-button {
+    background-color: cyan;
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+
+.add-button:hover {
+    background-color: rgb(29, 186, 186);
+}
+
+.add-button i {
+    margin-right: .5rem;
+}
